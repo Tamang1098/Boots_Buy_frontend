@@ -1,0 +1,46 @@
+header {
+  background-color: rgb(61, 61, 103);
+  padding: 15px 0;
+  color: black;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+nav a {
+  color: #ccc;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+}
+
+nav a:hover {
+  background-color: #333;
+  color: white;
+}
+
+nav a.active {
+  color: #ffffff;
+  background-color: #007bff;
+}
+
+nav span {
+  color: white;
+  font-weight: bold;
+  margin-right: 10px;
+}
