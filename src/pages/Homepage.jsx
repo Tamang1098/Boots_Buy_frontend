@@ -1,6 +1,6 @@
 import React from 'react';
 import './Homepage.css';
-import backgroundImage from '../assets/home.jpeg'; // adjust path if needed
+import backgroundImage from '../assets/home.jpg'; // adjust path if needed
 
 export default function Homepage() {
   return (
