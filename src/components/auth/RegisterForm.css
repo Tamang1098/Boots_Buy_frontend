@@ -1,4 +1,4 @@
-/* Shared layout */
+/* Base Reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,50 +9,97 @@ html, body {
   height: 100%;
   width: 100%;
   font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
 }
 
-.background-container {
+/* Animation Keyframes */
+@keyframes zoomFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes dropIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInElement {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popInButton {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Main container */
+.register-background-container {
   display: flex;
   flex-direction: row-reverse;
   height: 80vh;
-  width: 90vw;
-  margin-top: 10px;
-  margin-left: 5%;
+  width: 80vw;
+  margin-left: 10%;
+  margin-top: 2%;
+  background-color: white;
+  overflow: hidden;
 }
 
-/* Form box */
-.register-box {
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #E0E0E0;
-  padding: 40px;
-}
-
+/* Form styling */
 .register-form {
-  width: 100%;
-  max-width: 400px;
-  background: transparent;
-  padding: 40px 30px;
-  border-radius: 8px;
-  border: 2px solid rgb(61, 61, 103);
+  width: 50%;
+  height: 80vh;
+  background-color: #003b30f7;
+  padding: 60px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: zoomFadeIn 1s ease-out;
 }
 
 .register-form h2 {
   margin-bottom: 30px;
-  color: #333;
+  color: #fff;
   font-weight: 600;
   font-size: 28px;
   text-align: center;
+  animation: fadeInElement 0.6s ease-out forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
 }
 
 .register-form label {
   display: block;
   margin-bottom: 8px;
   font-weight: 600;
-  color: #555;
+  color: #ccc;
   font-size: 14px;
+  animation: fadeInElement 0.6s ease-out forwards;
+  opacity: 0;
 }
 
 .register-form input {
@@ -62,13 +109,55 @@ html, body {
   border: 1.5px solid #ccc;
   border-radius: 6px;
   font-size: 15px;
-  background-color: rgb(61, 61, 103);
-  color: white;
+  background-color: #fff;
+  color: #000;
+  animation: fadeInElement 0.6s ease-out forwards;
+  opacity: 0;
 }
 
 .register-form input:focus {
   border-color: #007BFF;
   outline: none;
+}
+
+/* Delays for staggered input appearance */
+.register-form label:nth-of-type(1),
+.register-form input#email {
+  animation-delay: 0.3s;
+}
+.register-form label:nth-of-type(2),
+.register-form input#username {
+  animation-delay: 0.5s;
+}
+.register-form label:nth-of-type(3),
+.register-form input#password {
+  animation-delay: 0.7s;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  background-color: white;
+  border: none;
+  border-radius: 6px;
+  color: black;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  animation: popInButton 0.5s ease forwards;
+  animation-delay: 0.9s;
+  opacity: 0;
+}
+
+.submit-button:hover:not(:disabled) {
+  background-color: #e6e6e6;
+  transform: scale(1.04);
+}
+
+.submit-button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
 }
 
 .error {
@@ -77,6 +166,7 @@ html, body {
   margin-top: -15px;
   margin-bottom: 15px;
   text-align: center;
+  animation: fadeInElement 0.5s ease-out forwards;
 }
 
 .success {
@@ -84,36 +174,16 @@ html, body {
   font-size: 14px;
   margin-top: 15px;
   text-align: center;
+  animation: fadeInElement 0.5s ease-out forwards;
 }
 
-.submit-button {
-  width: 100%;
-  padding: 14px;
-  font-size: 16px;
-  background-color: rgb(61, 61, 103);
-  border: 2px solid rgb(61, 61, 103);
-  border-radius: 6px;
-  color: black;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.submit-button:disabled {
-  background-color: #6c757d;
-  cursor: not-allowed;
-}
-
-.submit-button:hover:not(:disabled) {
-  background-color: white;
-}
-
-/* Background image */
-.background-image {
+/* Background image styling */
+.register-background-image {
   width: 50%;
   height: 80vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   flex-shrink: 0;
+  animation: dropIn 1s ease-out;
 }

@@ -1,8 +1,9 @@
 .footer {
-  background-color: rgb(61, 61, 103);
+  background-color: #003b30;
   color: #fff;
   padding: 2rem 1rem 1rem;
   font-family: Arial, sans-serif;
+  margin-top: 10px;
 }
 
 .footer-container {

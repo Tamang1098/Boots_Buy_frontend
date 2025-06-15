@@ -28,8 +28,8 @@ export default function LoginForm() {
 )
 
   return (
-    <div className="background-container">
-      <div className="login-box">
+    <div className="login-background-container">
+
         <form onSubmit={formik.handleSubmit} className="login-form">
           <h2>Login</h2>
 
@@ -68,10 +68,10 @@ export default function LoginForm() {
           {error && <p className="error">Login failed. Try again.</p>}
           {data && <p className="success">Login successful!</p>}
         </form>
-      </div>
+      
 
     
-      <img src={loginBg} alt="background" className="background-image" />
+      <img src={loginBg} alt="background" className="login-background-image" />
     </div>
   );
 

@@ -8,6 +8,7 @@ import LoginTest from '../pages/StateeManage'
 import Register from '../pages/Register'
 import GuestRoute from './GuestRoute'
 import NormalUserRoute from './NormalUserRoute'
+import Dashboard from '../pages/Dashboard'
 
 export default function AppRouter() {
     return (
@@ -22,6 +23,7 @@ export default function AppRouter() {
 
 
                     <Route path="/register" element={<Register />}></Route>
+                     <Route path="/dashboard" element={<Dashboard />}></Route>
 
                     </Route>
 

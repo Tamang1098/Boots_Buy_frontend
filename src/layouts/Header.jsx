@@ -23,7 +23,7 @@ export default function Header() {
                 {
                   user && (
                     <>
-                    welcome {user.email}
+                
                     <NavLink onClick={logout}>logout</NavLink>
                     </>
                   )
