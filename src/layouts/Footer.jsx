@@ -1,16 +1,19 @@
 import React from "react";
-import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import logo from "../assets/logo.jpg"; // Adjust path if needed
 import "./Footer.css";
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
+
+        {/* Left: Logo Image */}
         <div className="footer-left">
-          <h3>About Us</h3>
-          <p>We provide different varieties of Futsal Boot's.</p>
+          <img src={logo} alt="Boot's Buy Logo" className="footer-logo" />
         </div>
 
+        {/* Center: Navigation Links */}
         <div className="footer-center">
           <h3>Quick Links</h3>
           <ul>
@@ -21,15 +24,25 @@ const Footer = () => {
           </ul>
         </div>
 
+        {/* Right: Social Links */}
         <div className="footer-right">
           <h3>Follow Us</h3>
           <div className="social-icons">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-              <FaFacebookF className="icon" /> Facebook
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <FaFacebookF className="icon" /> Facebook <span className="arrow">→</span>
             </a>
-           
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <FaInstagram className="icon" /> Instagram
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <FaInstagram className="icon" /> Instagram <span className="arrow">→</span>
             </a>
           </div>
         </div>

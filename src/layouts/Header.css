@@ -1,5 +1,5 @@
-header {
-  background-color: whitesmoke;
+.header {
+  background-color: white;
   padding: 15px 0;
   color: black;
   border-bottom: 10px solid white;
@@ -8,10 +8,17 @@ header {
 .container {
   width: 90%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin:  0 5%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
+}
+
+.header-logo img {
+  margin-top: 8%;
+  height: 80px;
+  width: auto;
+  object-fit: cover;
 }
 
 nav {
@@ -26,17 +33,16 @@ nav a {
   font-weight: 500;
   padding: 6px 12px;
   border-radius: 6px;
- 
 }
 
 nav a:hover {
-  background-color: #333;
-  color: white;
+  background-color: white;
+  color: black;
 }
 
 nav a.active {
   color: #ffffff;
-  background-color:#003b30f7;
+  background-color: black;
 }
 
 nav span {
