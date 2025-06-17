@@ -73,6 +73,8 @@ import ProductManagement from '../pages/admin/ProductManagement';
 import AdminLayout from '../layouts/AdminLayout';
 import CreateBrand from '../pages/admin/BrandManagement';
 import BrandManagement from '../pages/admin/BrandManagement';
+import ViewBrand from '../pages/admin/ViewBrand';
+import UpdateBrand from '../pages/admin/UpdateBrand';
 
 export default function AppRouter() {
     return (
@@ -105,6 +107,8 @@ export default function AppRouter() {
                         <Route path="products" element={<ProductManagement />} />
 
                         <Route path='brands' element={< BrandManagement />}></Route>
+                         <Route path='brand/:id' element={<ViewBrand/>}></Route>
+                        <Route path='brand/:id/edit' element={<UpdateBrand/>}></Route>
                         <Route path='brands/create' element={<CreateBrand />} />
                         
                     </Route>

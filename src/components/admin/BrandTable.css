@@ -22,13 +22,38 @@
 }
 
 .brand-table th {
-  background-color: #f3f4f6; /* light gray */
-  color: #111827; /* dark text */
+  background-color: white;
+  color: #111827;
 }
 
 .brand-image {
-  width: 64px; /* 16 * 4 px */
-  height: 64px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   border-radius: 4px;
+ 
+}
+
+/* Align action buttons to the right */
+.brand-table td:last-child {
+  text-align: center;
+}
+
+
+.brand-table button {
+  background-color: #009688;
+  width: 100px;
+  color: #fff;
+  border: none;
+  padding: 15px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.brand-table button:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid #009688;
 }

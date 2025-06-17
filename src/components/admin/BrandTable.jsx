@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; 
 import { useAdminBrand } from '../../hooks/admin/useAdminBrand';
 import { getBackenedImageUrl } from '../../utils/backened-image';
 import './BrandTable.css';
@@ -15,20 +16,29 @@ export default function BrandTable() {
       <table className="brand-table">
         <thead>
           <tr>
-            <th>Name</th>
+            <th>BrandName</th>
             <th>Image</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
           {brands.map((row) => (
             <tr key={row._id}>
-              <td>{row.name}</td>
+              <td>{row.brandname}</td>
               <td>
                 <img
                   className="brand-image"
                   src={getBackenedImageUrl(row.filepath)}
                   alt={row.name}
                 />
+              </td>
+              <td>
+                <Link to={`/admin/brand/${row._id}`}>
+                  <button>View</button>
+                </Link>{' '}
+                <Link to={`/admin/brand/${row._id}/edit`}>
+                  <button>Edit</button>
+                </Link>
               </td>
             </tr>
           ))}

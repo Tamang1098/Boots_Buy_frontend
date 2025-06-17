@@ -8,4 +8,15 @@ export const createOneBrandApi= (data) =>
             "Content-Type":"multipart/form-data"
         }
     }
-    )  //request using multer/file upload
+)  //request using multer/file upload
+
+export const getOneBrandApi = (id) => 
+    axios.get("/admin/brand/" + id)
+
+export const updateOneBrandApi = (id, data) =>
+    axios.put("/admin/brand/" + id, data, {
+        headers: {
+            "Content-Type" : "multipart/form-data"
+        }
+    }
+)
