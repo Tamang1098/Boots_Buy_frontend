@@ -1,0 +1,117 @@
+body{
+  background-color: whitesmoke;
+}
+.admin-login-fullpage {
+  display: flex;
+  height: 80vh;
+  width: 70vw;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 5% 15%;
+  padding: 0;
+  background-color: white;
+  box-shadow: 0 10px 30px whitesmoke;
+  border-radius: 10px;
+}
+
+/* Left side image */
+.admin-image {
+  width: 50%;
+  height: 70vh;
+  object-fit: contain;
+  display: block;
+  margin: 5% 5%;
+  padding: 0;
+}
+
+/* Right side login form */
+.admin-login-box {
+  width: 30%;
+  height: 80vh;
+  background-color: white;
+  padding: 40px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 25px;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* Login form title */
+.admin-login-title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #1f2937;
+}
+
+/* Input fields */
+.admin-input {
+  padding: 12px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.2s;
+  background-color: black;
+  color: white;
+}
+
+.admin-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px #bfdbfe;
+}
+
+/* Error message */
+.admin-error {
+  color: #dc2626;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Login button */
+.admin-login-btn {
+  background-color: black;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.admin-login-btn:hover {
+  background-color: #111827;
+}
+
+/* Sidebar styling */
+.admin-sidebar {
+  background-color: #dc2626;
+  color: black;
+  height: 100%;
+}
+
+/* Header styling */
+.admin-header {
+  background-color: #f9fafb;
+}
+
+/* Optional: NavLink styling if you want consistency without Tailwind */
+.admin-sidebar a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  padding: 6px 0;
+}
+
+.admin-sidebar a:hover {
+  color: #b91c1c; /* Hover red */
+}
+
+.admin-sidebar a.active {
+  font-weight: bold;
+  color: #b91c1c; /* Active red */
+}

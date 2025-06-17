@@ -9,7 +9,7 @@ export default function Homepage() {
   useEffect(() => {
     const interval = setInterval(() => {
       setSlideIndex((prevIndex) => (prevIndex + 1) % 2);
-    }, 4000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
