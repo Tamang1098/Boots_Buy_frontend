@@ -3,11 +3,11 @@ import { Outlet, NavLink } from "react-router-dom";
 import { AuthContext } from "../auth/AuthProvider";
 import "./AdminLayout.css";
 import adminImage from "../assets/admin.jpg";
+import logo from "../assets/logo.jpg"; // <-- Logo image import
 
 export default function AdminLayout() {
   const { user, logout } = useContext(AuthContext);
 
-  // Initialize isLoggedIn from sessionStorage or false
   const [isLoggedIn, setIsLoggedIn] = useState(() => {
     return sessionStorage.getItem("adminLoggedIn") === "true";
   });
@@ -47,7 +47,6 @@ export default function AdminLayout() {
           <h2 className="admin-login-title">Admin Login</h2>
           {error && <p className="admin-error">{error}</p>}
 
-          {/* Dummy hidden fields to prevent autofill */}
           <input type="text" name="dummy_user" style={{ display: "none" }} />
           <input type="password" name="dummy_pass" style={{ display: "none" }} />
 
@@ -86,6 +85,7 @@ export default function AdminLayout() {
   return (
     <div className="flex h-screen">
       <aside className="w-64 shadow-lg p-4 admin-sidebar">
+        <img src={logo} alt="Logo" className="admin-logo" />
         <h2 className="text-xl font-bold mb-6">Admin Panel</h2>
         <nav className="flex flex-col space-y-3">
           <NavLink

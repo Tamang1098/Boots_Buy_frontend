@@ -71,7 +71,7 @@ import GuestRouter from '../routers/GuestRoute';
 import NormalUserRoute from './NormalUserRoute';
 import ProductManagement from '../pages/admin/ProductManagement';
 import AdminLayout from '../layouts/AdminLayout';
-import CreateBrand from '../pages/admin/BrandManagement';
+import CreateBrand from '../pages/admin/CreateBrand'
 import BrandManagement from '../pages/admin/BrandManagement';
 import ViewBrand from '../pages/admin/ViewBrand';
 import UpdateBrand from '../pages/admin/UpdateBrand';

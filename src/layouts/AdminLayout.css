@@ -86,31 +86,53 @@ body{
 
 
 .admin-sidebar {
-  background-color:#009688;
-  color:  white;
+
+  color:  #009688;
   height: 100%;
   text-align: center;
   font-weight: bold;
-  padding-top: 5%;
+  font-size: 20px;
   width: 20%;
+  background-color: #fff;
+ 
 }
 
 .admin-header {
   background-color: #f9fafb;
+  
 }
 
 
 .admin-sidebar a {
   margin-top: 15%;
   text-decoration: none;
-  color:white;
+  color:#009688;
   font-size: 16px;
   padding: 10px ;
-  border-bottom: 2px solid white;
+  border-bottom: 5px double #009688;
+  
+  
+  font-weight: bold;
+
+  
 }
 
 .admin-sidebar a:hover {
-  color: black; 
+  background-color: #009688;
+  color: white; 
+  
 }
 
+
+
+
+.admin-logo {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+
+  display: block;
+  margin-left: 4%;
+ 
+}
 
