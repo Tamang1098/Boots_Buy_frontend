@@ -1,4 +1,4 @@
-.brand-table-container {
+/* .brand-table-container {
   padding: 16px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -34,7 +34,6 @@
  
 }
 
-/* Align action buttons to the right */
 .brand-table td:last-child {
   text-align: center;
 }
@@ -56,4 +55,43 @@
   background-color: white;
   color: black;
   border: 2px solid #009688;
+} */
+
+
+
+
+.brand-table-container {
+  padding: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.brand-table-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.brand-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.brand-table th,
+.brand-table td {
+  border: 1px solid #ddd;
+  padding: 12px 16px;
+  vertical-align: middle;
+}
+
+.brand-table th {
+  background-color: white;
+  color: #111827;
+}
+
+.brand-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
 }

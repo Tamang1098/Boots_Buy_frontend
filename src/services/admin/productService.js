@@ -1,4 +1,4 @@
-import { getAllProductApi } from "../api/admin/productApi";
+import { getAllProductApi } from "../../api/admin/productApi";
 
 export const getAllProductService = async (params) => {
 

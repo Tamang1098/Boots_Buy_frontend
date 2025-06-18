@@ -1,4 +1,4 @@
-import {getAllBrandApi,createOneBrandApi,getOneBrandApi,updateOneBrandApi} from "../api/admin/brandApi"
+import {getAllBrandApi,createOneBrandApi,getOneBrandApi,updateOneBrandApi,deleteOneBrandApi} from "../../api/admin/brandApi"
 
 export const getAllBrandService= async() =>{
     try{
@@ -36,5 +36,16 @@ export const updateOneBrandService = async (id, data)=>{
         return response.data
     }catch(err){
         throw err.response?.data || { "message" : "Update failed"}
+    }
+}
+
+
+
+export const deleteOneBrandService = async (id) => {
+    try{
+        const response = await deleteOneBrandApi(id)
+        return response.data
+    }catch(err){
+        throw err.response?.data || {"message":"Deleted failed"}
     }
 }

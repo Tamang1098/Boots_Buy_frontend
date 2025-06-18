@@ -1,6 +1,6 @@
 import {  useMutation, useQuery, useQueryClient} from "@tanstack/react-query";
 
-import { createOneBrandService, getAllBrandService,getOneBrandService,updateOneBrandService } from "../../services/brandService";
+import { createOneBrandService, getAllBrandService,getOneBrandService,updateOneBrandService,deleteOneBrandService } from "../../services/admin/brandService";
 import { toast } from "react-toastify";
 
 export const useAdminBrand = () => {
@@ -83,3 +83,20 @@ export const useUpdateOneBrand = () => {
         }
     )
 }
+
+
+export const useDeleteOneBrand = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: deleteOneBrandService,
+    mutationKey: ["admin_brand_deleted"],
+    onSuccess: () => {
+      toast.success("Brand deleted");
+      queryClient.invalidateQueries(["admin_brand"]);
+    },
+    onError: (err) => {
+      toast.error(err?.message || "Delete failed");
+    },
+   });
+};

@@ -1,5 +1,5 @@
 import {keepPreviousData,useQuery}  from "@tanstack/react-query";
-import { getAllProductService } from "../../services/productService";
+import { getAllProductService } from "../../services/admin/productService";
 import {useState} from 'react'
 
 // GET Request- useQuery
