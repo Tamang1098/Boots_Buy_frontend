@@ -124,6 +124,19 @@ export default function AdminLayout() {
           >
             Brands
           </NavLink>
+
+           <NavLink
+            to="/admin/brands/create"
+            className={({ isActive }) =>
+              `${
+                isActive
+                  ? "text-red-600 font-semibold"
+                  : "text-black hover:text-red-500"
+              } block`
+            }
+          >
+            Create Brands
+          </NavLink>
         </nav>
       </aside>
 
