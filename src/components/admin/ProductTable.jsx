@@ -182,7 +182,7 @@ export default function ProductTable() {
       <table className="product-table">
         <thead>
           <tr>
-            <th>Image</th>
+            <th>Product Image</th>
             <th>Product Name</th>
             <th>Price</th>
           </tr>

@@ -1,7 +1,9 @@
-.brand-table-container {
+
+
+
+ .brand-table-container {
   padding: 16px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
 }
 
 .brand-table-title {
@@ -9,7 +11,6 @@
   font-weight: bold;
   margin-bottom: 16px;
   text-align: center;
-  
 }
 
 .brand-table {
@@ -17,27 +18,20 @@
   border-collapse: collapse;
   text-align: left;
   background-color: white;
-  
-  
- 
 }
 
 .brand-table th,
 .brand-table td {
-  border: 1px solid #ddd;
   padding: 12px 16px;
   vertical-align: middle;
   text-align: center;
-  
-  
- 
- 
+  border: 1px solid black;
 }
 
 .brand-table th {
   background-color: white;
   color: #111827;
-  
+  border: 1px solid black;
 }
 
 .brand-image {
@@ -50,3 +44,50 @@
   margin-right: auto;
 }
 
+/* Button styling */
+.action-button {
+  height: 60px;
+  padding: 0 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.view-button {
+  background-color: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+.view-button:hover {
+  background-color: white;
+  color: #3b82f6;
+}
+
+.edit-button {
+  background-color: #10b981;
+  color: white;
+  border-color: #10b981;
+}
+
+.edit-button:hover {
+  background-color: white;
+  color: #10b981;
+}
+
+.delete-button {
+  background-color: #ef4444;
+  color: white;
+  border-color: #ef4444;
+}
+
+.delete-button:hover {
+  background-color: white;
+  color: #ef4444;
+}
