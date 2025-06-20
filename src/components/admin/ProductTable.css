@@ -109,3 +109,10 @@
 .product-pagination button:hover:not(:disabled) {
   background-color: #111827;
 }
+
+
+.product-image {
+  width: 60px;
+  height: auto;
+  border-radius: 4px;
+}

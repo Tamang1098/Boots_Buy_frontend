@@ -104,12 +104,12 @@ export default function AppRouter() {
                 {/* Admin Routes with Admin Layout */}
                 <Route element={<AdminLayout />}>
                     <Route path="/admin/*">
-                        <Route path="products" element={<ProductManagement />} />
+                        <Route path="product" element={<ProductManagement />} />
 
-                        <Route path='brands' element={< BrandManagement />}></Route>
+                        <Route path='brand' element={< BrandManagement />}></Route>
                          <Route path='brand/:id' element={<ViewBrand/>}></Route>
                         <Route path='brand/:id/edit' element={<UpdateBrand/>}></Route>
-                        <Route path='brands/create' element={<CreateBrand />} />
+                        <Route path='brand/create' element={<CreateBrand />} />
                         
                     </Route>
                 </Route>

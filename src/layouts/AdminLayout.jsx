@@ -101,7 +101,7 @@ export default function AdminLayout() {
             Users
           </NavLink>
           <NavLink
-            to="/admin/products"
+            to="/admin/product"
             className={({ isActive }) =>
               `${
                 isActive
@@ -113,7 +113,7 @@ export default function AdminLayout() {
             Products
           </NavLink>
           <NavLink
-            to="/admin/brands"
+            to="/admin/brand"
             className={({ isActive }) =>
               `${
                 isActive
@@ -126,7 +126,7 @@ export default function AdminLayout() {
           </NavLink>
 
            <NavLink
-            to="/admin/brands/create"
+            to="/admin/brand/create"
             className={({ isActive }) =>
               `${
                 isActive
