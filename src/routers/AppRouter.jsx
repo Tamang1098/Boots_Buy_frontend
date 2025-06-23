@@ -1,119 +1,77 @@
-// import React from 'react'
-// import { BrowserRouter, Route, Routes } from 'react-router-dom'
-// import Homepage from '../pages/Homepage'
-// import Login from '../pages/Login'
-// import MainLayout from '../layouts/MainLayout'
-// import StateManage from '../pages/StateManage'
-// import LoginTest from '../pages/StateeManage'
-// import Register from '../pages/Register'
-// import GuestRoute from './GuestRoute'
-// import NormalUserRoute from './NormalUserRoute'
-// import Dashboard from '../pages/Dashboard'
-
-// export default function AppRouter() {
-//     return (
-//         <BrowserRouter>
-//             <Routes>
-//                 <Route path='/state-test' element={<StateManage />}></Route>
-            
-//                 <Route element={<MainLayout />}>
-//                     <Route path="/" element={<Homepage />}></Route>
-//                     <Route element={<GuestRoute />}>
-//                     <Route path="/login" element={<Login />}></Route>
-
-
-//                     <Route path="/register" element={<Register />}></Route>
-//                      <Route path="/dashboard" element={<Dashboard />}></Route>
-
-//                     </Route>
-
-                   
-//                 </Route>
-
-                
-//                     <Route path='/normal/*' element={<NormalUserRoute />}> 
-
-//                         <Route path = 'order' element={<>My Order</>}></Route>
-//                         <Route path = 'cart' element={<>My Cart</>}></Route>
-//                         <Route path = '*' element={<>404 Not Found</>}></Route>
-//                     </Route>
-
-//                    <Route path='/admin/*'>
-//                          <Route element={<MainLayout/>}>
-//                          <Route path="dashboard" element= {<>Admin Dashboard</>}></Route>
-//                         <Route path="users" element= {<>Admin Users</>}></Route>
-//                         <Route path="category" element= {<>Admin Category</>}></Route>
-//                           <Route path="product" element= {<>Admin Product</>}></Route>
-//                     </Route>
-//                 </Route>
-                    
-                    
-
-//             </Routes>
-
-
-//         </BrowserRouter>
-//     )
-// }
-
-
-
-
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
 import Homepage from '../pages/Homepage';
 import Login from '../pages/Login';
-import MainLayout from '../layouts/MainLayout';
-import StateManage from '../pages/StateManage';
-import LoginTest from '../pages/StateeManage'; // check this path is correct
 import Register from '../pages/Register';
+import StateManage from '../pages/StateManage';
+import LoginTest from '../pages/StateeManage'; 
+
+// Layouts
+import MainLayout from '../layouts/MainLayout';
+import AdminLayout from '../layouts/AdminLayout';
+
+// Route Guards
 import GuestRouter from '../routers/GuestRoute';
 import NormalUserRoute from './NormalUserRoute';
+
+// Admin Pages
 import ProductManagement from '../pages/admin/ProductManagement';
-import AdminLayout from '../layouts/AdminLayout';
-import CreateBrand from '../pages/admin/CreateBrand'
 import BrandManagement from '../pages/admin/BrandManagement';
 import ViewBrand from '../pages/admin/ViewBrand';
 import UpdateBrand from '../pages/admin/UpdateBrand';
+import CreateBrand from '../pages/admin/CreateBrand';
+import UpdateUser from '../pages/admin/UpdateUser';
+import UserTable from '../pages/admin/UserManagementt'; // ✅ Import added
 
 export default function AppRouter() {
-    return (
-        <BrowserRouter>
-            <Routes>
-                <Route path='/state-test' element={<StateManage />} />
-                <Route path='/login-test' element={<LoginTest />} />
+  return (
+    <BrowserRouter>
+      <Routes>
 
-                {/* Public Routes with MainLayout */}
-                <Route element={<MainLayout />}>
-                    <Route path="/" element={<Homepage />} />
+        {/* Standalone test routes */}
+        <Route path="/state-test" element={<StateManage />} />
+        <Route path="/login-test" element={<LoginTest />} />
 
-                    {/* Guest Only Routes */}
-                    <Route element={<GuestRouter />}>
-                        <Route path="/register" element={<Register />} />
-                        <Route path="/login" element={<Login />} />
-                    </Route>
-                </Route>
+        {/* Public Routes with MainLayout */}
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<Homepage />} />
 
-                {/* Normal User Routes */}
-                <Route path="/normal/*" element={<NormalUserRoute />}>
-                    <Route path="order" element={<>My order</>} />
-                    <Route path="cart" element={<>My cart</>} />
-                    <Route path="*" element={<>404 not found</>} />
-                </Route>
+          {/* Guest-only routes */}
+          <Route element={<GuestRouter />}>
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+          </Route>
+        </Route>
 
-                {/* Admin Routes with Admin Layout */}
-                <Route element={<AdminLayout />}>
-                    <Route path="/admin/*">
-                        <Route path="product" element={<ProductManagement />} />
+        {/* Normal User Routes */}
+        <Route path="/normal/*" element={<NormalUserRoute />}>
+          <Route path="order" element={<>My order</>} />
+          <Route path="cart" element={<>My cart</>} />
+          <Route path="*" element={<>404 not found</>} />
+        </Route>
 
-                        <Route path='brand' element={< BrandManagement />}></Route>
-                         <Route path='brand/:id' element={<ViewBrand/>}></Route>
-                        <Route path='brand/:id/edit' element={<UpdateBrand/>}></Route>
-                        <Route path='brand/create' element={<CreateBrand />} />
-                        
-                    </Route>
-                </Route>
-            </Routes>
-        </BrowserRouter>
-    );
+        {/* Admin Routes with AdminLayout */}
+        <Route element={<AdminLayout />}>
+          <Route path="/admin/*">
+            <Route path="product" element={<ProductManagement />} />
+
+            <Route path="brand" element={<BrandManagement />} />
+            <Route path="brand/:id" element={<ViewBrand />} />
+            <Route path="brand/:id/edit" element={<UpdateBrand />} />
+            <Route path="brand/create" element={<CreateBrand />} />
+
+            <Route path="users" element={<UserTable />} /> {/* ✅ Fix for /admin/users */}
+            <Route path="users/:id/edit" element={<UpdateUser />} />
+
+            {/* Optional: Admin dashboard default page */}
+            <Route index element={<div>Welcome to Admin Dashboard</div>} />
+          </Route>
+        </Route>
+
+        {/* Catch-all route */}
+        <Route path="*" element={<div>404 - Page Not Found</div>} />
+      </Routes>
+    </BrowserRouter>
+  );
 }

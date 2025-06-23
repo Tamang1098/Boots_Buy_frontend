@@ -1,0 +1,84 @@
+.create-brand-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+ 
+ 
+}
+
+.create-brand-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  height: 500px;;
+}
+
+.create-brand-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.create-brand-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.create-brand-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-brand-label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.create-brand-input,
+.create-brand-file-input {
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.create-brand-error {
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.create-brand-preview {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  margin-top: -0.5rem;
+}
+
+.create-brand-button {
+  background-color: #3b82f6;
+  color: white;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.create-brand-button:hover {
+  background-color: #2563eb;
+}
+
+.create-brand-button:disabled {
+  background-color: #93c5fd;
+  cursor: not-allowed;
+}

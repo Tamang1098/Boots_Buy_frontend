@@ -18,17 +18,39 @@ export default function RegisterForm() {
 
   return (
     <div className="register-background-container">
-      <form onSubmit={handleSubmit} className="register-form">
+      <form onSubmit={handleSubmit} className="register-form" autoComplete="off">
         <h2>Register</h2>
 
+        {/* Trick browser by adding hidden fake fields */}
+        <input type="text" name="fakeUsername" style={{ display: 'none' }} autoComplete="off" />
+        <input type="password" name="fakePassword" style={{ display: 'none' }} autoComplete="new-password" />
+
         <label htmlFor="email">Email</label>
-        <input type="email" name="email" id="email" required />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          required
+          autoComplete="new-email"
+        />
 
         <label htmlFor="username">Username</label>
-        <input type="text" name="username" id="username" required />
+        <input
+          type="text"
+          name="username"
+          id="username"
+          required
+          autoComplete="new-username"
+        />
 
         <label htmlFor="password">Password</label>
-        <input type="password" name="password" id="password" required />
+        <input
+          type="password"
+          name="password"
+          id="password"
+          required
+          autoComplete="new-password"
+        />
 
         <button type="submit" className="submit-button" disabled={isPending}>
           {isPending ? 'Registering...' : 'Register'}
