@@ -21,7 +21,7 @@ export const useCreateBrand = () => {
     return useMutation({
         mutationFn: createOneBrandService,
         onSuccess: () => {
-            toast.success("brand created")
+            toast.success("Brand created")
             queryClient
                 .invalidateQueries(["admin_brand"])
 

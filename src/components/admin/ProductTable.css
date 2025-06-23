@@ -5,7 +5,7 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Title (optional, if you want to add a heading) */
+/* Title */
 .product-table-title {
   font-size: 24px;
   font-weight: bold;
@@ -13,40 +13,47 @@
   text-align: center;
 }
 
-/* Top Controls: Search + Page Size */
+/* Controls: Page size & Search */
 .product-controls {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 20px;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 16px;
+}
+
+.product-controls > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .product-controls label {
   font-weight: 500;
-  margin-right: 8px;
   color: #1f2937;
 }
 
+/* Dropdown */
 .product-select {
   padding: 8px 12px;
   border: 1px solid #cbd5e1;
   border-radius: 6px;
   font-size: 14px;
-  outline: none;
   background-color: white;
+  outline: none;
 }
 
+/* Search Input */
 .product-search {
-  background-color: black;
-  color: white;
+  width: 240px;
   padding: 10px 14px;
   border: 1px solid #cbd5e1;
   border-radius: 8px;
   font-size: 15px;
-  width: 200px;
-  outline: none;
+  background-color: black;
+  color: white;
+  box-sizing: border-box;
   transition: 0.2s;
 }
 
@@ -57,6 +64,7 @@
 .product-search:focus {
   border-color: #3b82f6;
   box-shadow: 0 0 0 2px #bfdbfe;
+  outline: none;
 }
 
 /* Table Styling */
@@ -68,23 +76,29 @@
 
 .product-table th,
 .product-table td {
-  border: 1px solid #e5e7eb;
+  border: 1px solid #000;
   padding: 12px 16px;
   text-align: center;
-  border: 1px solid black;
 }
 
 .product-table th {
   background-color: #f3f4f6;
   font-weight: bold;
   color: #111827;
-  border: 1px solid black;
- 
 }
 
 .product-table tr:nth-child(even) {
   background-color: #f9fafb;
-  
+}
+
+/* Product Image */
+.product-image {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 4px;
+  display: block;
+  margin: auto;
 }
 
 /* Pagination */
@@ -106,23 +120,11 @@
   transition: background-color 0.3s;
 }
 
-.product-pagination button:disabled {
-  background-color: #9ca3af;
-  cursor: not-allowed;
-}
-
 .product-pagination button:hover:not(:disabled) {
   background-color: #111827;
 }
 
-
-.product-image {
-width: 100px;
-  height: 100px;
-  object-fit: contain;
-  border-radius: 4px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  
+.product-pagination button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
 }

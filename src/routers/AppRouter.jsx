@@ -17,12 +17,15 @@ import NormalUserRoute from './NormalUserRoute';
 
 // Admin Pages
 import ProductManagement from '../pages/admin/ProductManagement';
+import ViewProduct from '../pages/admin/ViewProduct';
+import UpdateProduct from '../pages/admin/UpdateProduct';
 import BrandManagement from '../pages/admin/BrandManagement';
 import ViewBrand from '../pages/admin/ViewBrand';
 import UpdateBrand from '../pages/admin/UpdateBrand';
 import CreateBrand from '../pages/admin/CreateBrand';
 import UpdateUser from '../pages/admin/UpdateUser';
 import UserTable from '../pages/admin/UserManagementt'; // ✅ Import added
+// import CreateProduct from '../pages/admin/CreateProduct';
 
 export default function AppRouter() {
   return (
@@ -55,6 +58,9 @@ export default function AppRouter() {
         <Route element={<AdminLayout />}>
           <Route path="/admin/*">
             <Route path="product" element={<ProductManagement />} />
+             <Route path="product/:id" element={<ViewProduct />} />
+            <Route path="product/:id/edit" element={<UpdateProduct />} />
+            {/* <Route path="product/create" element={<CreateProduct />} /> */}
 
             <Route path="brand" element={<BrandManagement />} />
             <Route path="brand/:id" element={<ViewBrand />} />
