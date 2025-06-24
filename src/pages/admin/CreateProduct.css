@@ -1,0 +1,94 @@
+/* CreateProduct.css */
+
+.create-product-container {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 16px;
+  /* No background-color here, inherits or transparent */
+  color: black; /* default text black */
+  font-family: Arial, sans-serif;
+  border-radius: 6px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+}
+
+.create-product-container h2 {
+  text-align: center;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.create-product-container label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: black;
+}
+
+.create-product-container input[type="text"],
+.create-product-container input[type="number"],
+.create-product-container select,
+.create-product-container input[type="file"] {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 14px;
+  color: black; /* text black */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+}
+
+.create-product-container select {
+  /* Keep text black, background transparent */
+  color: black;
+  background-color:white;
+  max-height: 150px; /* for scroll */
+  overflow-y: auto;
+}
+
+/* Style options inside select dropdown */
+.create-product-container select option {
+  color: black;
+  background: white;
+}
+
+/* On focus or hover, keep text black, background transparent */
+.create-product-container input[type="text"]:focus,
+.create-product-container input[type="number"]:focus,
+.create-product-container select:focus,
+.create-product-container input[type="file"]:focus {
+  outline: 2px solid #007BFF;
+  color: black;
+}
+
+/* Error message styling */
+.error {
+  color: #cc0000;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* Button styling */
+.create-product-container button {
+  margin-top: 20px;
+  width: 100%;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.create-product-container button:disabled {
+  background-color: #7ba9d9;
+  cursor: not-allowed;
+}
+
+/* Preview image container */
+.create-product-container img {
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}

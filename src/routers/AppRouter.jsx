@@ -25,7 +25,7 @@ import UpdateBrand from '../pages/admin/UpdateBrand';
 import CreateBrand from '../pages/admin/CreateBrand';
 import UpdateUser from '../pages/admin/UpdateUser';
 import UserTable from '../pages/admin/UserManagementt'; // ✅ Import added
-// import CreateProduct from '../pages/admin/CreateProduct';
+ import CreateProduct from '../pages/admin/CreateProduct';
 
 export default function AppRouter() {
   return (
@@ -60,7 +60,7 @@ export default function AppRouter() {
             <Route path="product" element={<ProductManagement />} />
              <Route path="product/:id" element={<ViewProduct />} />
             <Route path="product/:id/edit" element={<UpdateProduct />} />
-            {/* <Route path="product/create" element={<CreateProduct />} /> */}
+            <Route path="product/create" element={<CreateProduct />} /> 
 
             <Route path="brand" element={<BrandManagement />} />
             <Route path="brand/:id" element={<ViewBrand />} />

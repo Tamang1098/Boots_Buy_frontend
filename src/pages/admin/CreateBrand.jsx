@@ -82,7 +82,7 @@ export default function CreateBrand() {
             disabled={isPending}
             className="create-brand-button"
           >
-            {isPending ? 'Creating...' : 'Create'}
+            {isPending ? 'Creating...' : 'Create Brand'}
           </button>
 
           {error && <p className="create-brand-error mt-2">{error.message}</p>}
