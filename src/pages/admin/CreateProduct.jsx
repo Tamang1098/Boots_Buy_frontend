@@ -99,7 +99,7 @@ export default function CreateProduct() {
           <option value="">Select a brand</option>
           {brand.map((brand) => (
             <option key={brand._id} value={brand._id}>
-              {brand._id}
+              {brand.brandname}({brand._id})
             </option>
           ))}
         </select>
