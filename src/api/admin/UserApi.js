@@ -2,8 +2,13 @@
 import axios from "../api";
 
 // Get all users with optional query params (pagination, search)
-export const getAllUserApi = (params) => 
-  axios.get("/admin/users", { params });
+export const getAllUserApi = (params) => {
+  const token = localStorage.getItem("token");
+  return axios.get("/admin/users", {
+    params,
+    headers: { Authorization: `Bearer ${token}` },
+  });
+};
 
 // Get one user by ID
 export const getOneUserApi = (id) => 

@@ -1,4 +1,4 @@
-import { deleteOneUserApi, getAllUserApi, getOneUserApi, updateOneUserApi } from "../../api/admin/userApi";
+import { deleteOneUserApi, getAllUserApi, getOneUserApi, updateOneUserApi } from "../../api/admin/UserApi";
 
 export const getAllUserService= async(params) =>{
     try{

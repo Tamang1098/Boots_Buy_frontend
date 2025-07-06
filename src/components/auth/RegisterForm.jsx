@@ -11,7 +11,9 @@ export default function RegisterForm() {
     const formData = {
       email: e.target.email.value,
       username: e.target.username.value,
-      password: e.target.password.value
+      password: e.target.password.value,
+      address: e.target.address.value,
+      mobilenumber: e.target.mobilenumber.value
     };
     mutate(formData);
   };
@@ -51,6 +53,26 @@ export default function RegisterForm() {
           required
           autoComplete="new-password"
         />
+
+          <label htmlFor="mobilenumber">Mobile Number</label>
+        <input
+          type="text"
+          name="mobilenumber"
+          id="mobilenumber"
+          required
+         
+        />
+
+        <label htmlFor="address">Address</label>
+        <input
+          type="text"
+          name="address"
+          id="address"
+          required
+         
+        />
+
+        
 
         <button type="submit" className="submit-button" disabled={isPending}>
           {isPending ? 'Registering...' : 'Register'}

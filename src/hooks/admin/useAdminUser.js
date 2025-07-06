@@ -93,7 +93,7 @@ export const useDeleteOneUser=() =>{
             mutationFn: deleteOneUserService,
             mutationKey:["admin_user_delete"],
             onSuccess: () =>{
-                toast.success("user deleted")
+                // toast.success("user deleted")
                 queryClient.invalidateQueries(["admin_user"])
             },
             onError: (err)=>{

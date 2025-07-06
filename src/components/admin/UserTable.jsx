@@ -1,12 +1,9 @@
-
-
-
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useAdminUser, useDeleteOneUser } from '../../hooks/admin/useAdminUser';
 import DeleteModal from '../DeleteModal';
-// import './UserTable.css'; 
 import { toast } from 'react-toastify';
+import './UserTable.css';
+
 
 export default function UserTable() {
   const [deleteId, setDeleteId] = useState(null);
@@ -55,6 +52,8 @@ export default function UserTable() {
   if (isPending) return <div>Loading users...</div>;
   if (error) return <div>Error: {error.message}</div>;
 
+  console.log(users); // ✅ Check the data shape in console
+
   return (
     <div className="user-table-container">
       <DeleteModal
@@ -92,6 +91,8 @@ export default function UserTable() {
             <th>Username</th>
             <th>Email</th>
             <th>Password</th>
+            <th>Address</th>
+            <th>Mobile Number</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -101,10 +102,9 @@ export default function UserTable() {
               <td>{row.username}</td>
               <td>{row.email}</td>
               <td>{row.password}</td>
+              <td>{row.address}</td>
+              <td>{row.mobilenumber}</td>
               <td className="flex gap-2 justify-center items-center">
-                <Link to={`/admin/users/${row._id}/edit`}>
-                  <button className="action-button edit-button">Edit</button>
-                </Link>
                 <button
                   onClick={() => setDeleteId(row._id)}
                   className="action-button delete-button"
@@ -132,4 +132,3 @@ export default function UserTable() {
     </div>
   );
 }
-

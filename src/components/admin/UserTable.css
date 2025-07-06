@@ -1,0 +1,151 @@
+/* Container for the whole user table section */
+.user-table-container {
+  
+
+  padding: 15px;
+  background-color: #f9fafb;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+/* Title of the user table */
+.user-table-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #222;
+  text-align: center;
+}
+
+/* Controls container: select and search input */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.controls label {
+  font-weight: 600;
+  color: #555;
+}
+
+.controls select,
+.controls input[type="text"] {
+  padding: 6px 10px;
+  border: 1.5px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  outline-color: #007bff;
+  transition: border-color 0.2s ease;
+}
+
+.controls select:hover,
+.controls input[type="text"]:hover,
+.controls select:focus,
+.controls input[type="text"]:focus {
+  border-color: #9ca3af;
+}
+
+/* User table styles */
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.user-table thead tr {
+  background-color:white;
+  color: black;
+
+}
+
+.user-table th,
+.user-table td {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  vertical-align: middle;
+  font-size: 0.95rem;
+  word-break: break-word;
+    border: 1px solid black;
+   
+}
+
+/* Row hover effect */
+.user-table tbody tr:hover {
+  background-color: #f1f7ff;
+}
+
+/* Actions column: flex container for buttons */
+.flex {
+  display: flex;
+}
+
+.gap-2 {
+  gap: 8px;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+/* Button styles */
+.action-button {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+  width: 80px;
+}
+
+.delete-button {
+  background-color: #dc3545; /* Bootstrap danger red */
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: white;
+  
+}
+
+/* Pagination controls */
+.pagination-controls {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+  color: #444;
+}
+
+.pagination-controls button {
+  padding: 6px 15px;
+  font-size: 1rem;
+  border: 1.5px solid #007bff;
+  background-color: white;
+  color: #007bff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.pagination-controls button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  border-color: #999;
+  color: #999;
+}
+
+.pagination-controls button:not(:disabled):hover {
+  background-color: #9ca3af;
+  color: white;
+}

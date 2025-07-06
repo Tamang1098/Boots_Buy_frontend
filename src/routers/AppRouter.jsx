@@ -6,6 +6,9 @@ import Login from '../pages/Login';
 import Register from '../pages/Register';
 import StateManage from '../pages/StateManage';
 import LoginTest from '../pages/StateeManage'; 
+import AboutUs from '../pages/AboutUs';
+import PrivacyPolicy from '../pages/PrivacyPolicy';
+
 
 // Layouts
 import MainLayout from '../layouts/MainLayout';
@@ -24,8 +27,11 @@ import ViewBrand from '../pages/admin/ViewBrand';
 import UpdateBrand from '../pages/admin/UpdateBrand';
 import CreateBrand from '../pages/admin/CreateBrand';
 import UpdateUser from '../pages/admin/UpdateUser';
-import UserTable from '../pages/admin/UserManagementt'; // ✅ Import added
- import CreateProduct from '../pages/admin/CreateProduct';
+import UserTable from '../pages/admin/UserManagement'; // ✅ Import added
+import CreateProduct from '../pages/admin/CreateProduct';
+import UserManagement from '../pages/admin/UserManagement';
+
+
 
 export default function AppRouter() {
   return (
@@ -39,6 +45,14 @@ export default function AppRouter() {
         {/* Public Routes with MainLayout */}
         <Route element={<MainLayout />}>
           <Route path="/" element={<Homepage />} />
+            <Route path="/aboutus" element={<AboutUs />} />
+  <Route path="/privacy" element={<PrivacyPolicy />} />
+
+           <Route path="/normal/*" element={<NormalUserRoute />}>
+          <Route path="order" element={<>My order</>} />
+          <Route path="cart" element={<>My cart</>} />
+          <Route path="*" element={<>404 not found</>} />
+        </Route>
 
           {/* Guest-only routes */}
           <Route element={<GuestRouter />}>
@@ -47,12 +61,7 @@ export default function AppRouter() {
           </Route>
         </Route>
 
-        {/* Normal User Routes */}
-        <Route path="/normal/*" element={<NormalUserRoute />}>
-          <Route path="order" element={<>My order</>} />
-          <Route path="cart" element={<>My cart</>} />
-          <Route path="*" element={<>404 not found</>} />
-        </Route>
+       
 
         {/* Admin Routes with AdminLayout */}
         <Route element={<AdminLayout />}>
@@ -67,8 +76,9 @@ export default function AppRouter() {
             <Route path="brand/:id/edit" element={<UpdateBrand />} />
             <Route path="brand/create" element={<CreateBrand />} />
 
-            <Route path="users" element={<UserTable />} /> {/* ✅ Fix for /admin/users */}
-            <Route path="users/:id/edit" element={<UpdateUser />} />
+
+             <Route path="users" element={<UserManagement />} /> 
+            {/* <Route path="users/:id/edit" element={<UpdateUser />} /> */}
 
             {/* Optional: Admin dashboard default page */}
             <Route index element={<div>Welcome to Admin Dashboard</div>} />
@@ -81,3 +91,4 @@ export default function AppRouter() {
     </BrowserRouter>
   );
 }
+
