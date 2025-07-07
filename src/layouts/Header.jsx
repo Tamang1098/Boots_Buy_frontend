@@ -99,7 +99,7 @@ export default function Header() {
 
           {isAuthenticated && user?.role === 'normal' && (
             <>
-              {/* <NavLink
+              <NavLink
                 to="/normal/product"
                 className={({ isActive }) =>
                   isActive
@@ -108,7 +108,7 @@ export default function Header() {
                 }
               >
                 Product
-              </NavLink> */}
+              </NavLink>
               <NavLink
                 to="/normal/cart"
                 className={({ isActive }) =>
