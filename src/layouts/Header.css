@@ -1,63 +1,6 @@
 /* .header {
   background-color: white;
   padding: 15px 0;
-  color: black;
-  border-bottom: 10px solid white;
-}
-
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin:  0 5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header-logo img {
-  margin-top: 8%;
-  height: 80px;
-  width: auto;
-  object-fit: cover;
-}
-
-nav {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
-nav a {
-  color: black;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 6px 12px;
-  border-radius: 6px;
-}
-
-nav a:hover {
-  background-color: white;
-  color: black;
-}
-
-nav a.active {
-  color: #ffffff;
-  background-color: black;
-}
-
-nav span {
-  color: white;
-  font-weight: bold;
-  margin-right: 10px;
-}
-
- */
-
-
-
- .header {
-  background-color: white;
-  padding: 15px 0;
   border-bottom: 10px solid white;
   color: black;
 }
@@ -117,4 +60,84 @@ nav span {
   background-color: black;
   color: white;
   border-color: black;
+} */
+
+
+.header {
+  background-color: white;
+  padding: 15px 0;
+  border-bottom: 10px solid white;
+  color: black;
+}
+
+.header__container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo-link {
+  display: inline-block;
+}
+
+.header__logo-image {
+  height: 80px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.header__nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.header__nav-button {
+  background-color: white;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.header__nav-button:hover {
+  background-color: black;
+  color: white;
+  border-color: black;
+}
+
+.header__nav-button--active,
+.header__nav-button--active:hover {
+  background-color: black;
+  color: white;
+  border-color: black;
+}
+
+/* Cart notification badge */
+.cart-notification {
+  background-color: red; /* blue background */
+  color: white;              /* white text */
+  font-weight: 700;
+  font-size: 0.75rem;
+  min-width: 20px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-left: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
 }
